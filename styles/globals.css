@@ -20,6 +20,7 @@
 
 .main:before {
   background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  /* background: #000; */
   position: absolute;
   content: "";
   z-index: 2;
@@ -36,7 +37,7 @@
   width: 100%;
   height: 100%;
   top: 0;
-  opacity: 0.4;
+  opacity: 1;
   filter: invert(1);
 }
 
@@ -87,6 +88,9 @@
 
 .head_text {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+}
+.head_text-2 {
+  @apply mt-5 text-[2.5] font-bold  text-black max-md:text-[1.5];
 }
 
 .orange_gradient {

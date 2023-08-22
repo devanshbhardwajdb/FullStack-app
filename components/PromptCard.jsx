@@ -27,7 +27,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    <div className='prompt_card'>
+    <div className='prompt_card break-words'>
       <div className='flex justify-between items-start gap-5'>
         <div
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
@@ -42,10 +42,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
 
           <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900'>
+            <h3 className='font-satoshi font-semibold text-gray-900 break-all'>
               {post.creator.username}
             </h3>
-            <p className='font-inter text-sm text-gray-500'>
+            <p className='font-inter text-sm text-gray-500 break-all '>
               {post.creator.email}
             </p>
           </div>
@@ -72,21 +72,64 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       >
         #{post.tag}
       </p>
+      <div className='mt-5 flex-between gap-4 border-t border-gray-500 pt-3'>
+          <div className="flex flex-center gap-3 ">
+          <p
+            className='font-inter text-sm  cursor-pointer'
+            
+          >
+            <Image src={"/assets/icons/heart.png"} width={25} height={25}></Image>
+          </p><p
+            className='font-inter text-sm  cursor-pointer'
+           
+          >
+            <Image src={"/assets/icons/comment.svg"} width={25} height={25}></Image>
+          </p><p
+            className='font-inter text-sm cursor-pointer'
+          >
+            <Image src={"/assets/icons/share.svg"} width={20} height={20}></Image>
+          </p>
+          </div>
+          <div className="flex flex-center">
+            
+          </div>
+        </div>
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
-        <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+        <div className='mt-5 flex-between gap-4 border-t border-gray-500 pt-3'>
+          <div className="flex flex-center gap-3 ">
           <p
+            className='font-inter text-sm  cursor-pointer'
+            
+          >
+            <Image src={"/assets/icons/heart.png"} width={25} height={25}></Image>
+          </p><p
+            className='font-inter text-sm  cursor-pointer'
+           
+          >
+            <Image src={"/assets/icons/comment.svg"} width={20} height={20}></Image>
+          </p><p
+            className='font-inter text-sm cursor-pointer'
+          >
+            <Image src={"/assets/icons/share.svg"} width={20} height={20}></Image>
+          </p>
+
+
+          </div>
+          <div className="flex flex-center">
+            <p
             className='font-inter text-sm green_gradient cursor-pointer'
             onClick={handleEdit}
           >
-            Edit
+            <Image src={"/assets/icons/edit.svg"} width={20} height={20}></Image>
           </p>
-          <p
-            className='font-inter text-sm orange_gradient cursor-pointer'
-            onClick={handleDelete}
-          >
-            Delete
-          </p>
+            <p
+              className='font-inter text-sm orange_gradient cursor-pointer'
+              onClick={handleDelete}
+            >
+              <Image src={"/assets/icons/delete.svg"} width={20} height={20}></Image>
+            </p>
+          </div>
         </div>
       )}
     </div>

@@ -4,12 +4,15 @@ import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
 export const metadata = {
-  title: "Promptopia",
+  title: "Twikker",
   description: "Discover & Share AI Prompts",
 };
 
 const RootLayout = ({ children }) => (
   <html lang='en'>
+    <head>
+      <link rel="shortcut icon" href="/assets/icons/twikker-favicon.svg" />
+    </head>
     <body>
       <Provider>
         <div className='main'>

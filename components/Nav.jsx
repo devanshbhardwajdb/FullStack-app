@@ -27,9 +27,9 @@ const Nav = () => {
 
     return (
         <nav className="flex-between w-full mb-16 pt-3">
-            <Link href="/" className="flex gap-2 flex-center">
-                <Image src="/assets/images/logo.svg" alt="Promptompia Logo" className="object-contain" width={30} height={30} />
-                <p className="logo_text">Promptopia</p>
+            <Link href="/" className="flex gap-1 flex-center">
+                <Image src="/assets/icons/twikker-logo.svg" alt="Promptompia Logo" className="object-contain" width={40} height={40} />
+                <p className="logo_text">Twikker</p>
             </Link>
             
             
