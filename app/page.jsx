@@ -3,7 +3,7 @@ import Feed from "@components/Feed";
 const Home = () => (
   <section className='w-full flex-center flex-col'>
     <h1 className='head_text text-center'>
-      <div className="">Welcome to Twikker</div>
+      <div className="text-white">Welcome to Twikker</div>
       {/* <br className='max-md:hidden' /> */}
       <span className='blue_gradient text-center'> Tweek your thoughts</span>
     </h1>

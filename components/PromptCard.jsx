@@ -42,10 +42,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
 
           <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900 break-all'>
+            <h3 className='font-satoshi font-semibold text-gray-200 break-all'>
               {post.creator.username}
             </h3>
-            <p className='font-inter text-sm text-gray-500 break-all '>
+            <p className='font-inter text-sm text-gray-400 break-all '>
               {post.creator.email}
             </p>
           </div>
@@ -56,7 +56,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             src={
               copied === post.prompt
                 ? "/assets/icons/tick.svg"
-                : "/assets/icons/copy.svg"
+                : "/assets/icons/copy.png"
             }
             alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
             width={12}
@@ -65,73 +65,75 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         </div>
       </div>
 
-      <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
+      <p className='my-4 font-satoshi text-sm text-gray-200'>{post.prompt}</p>
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
         #{post.tag}
       </p>
-      <div className='mt-5 flex-between gap-4 border-t border-gray-500 pt-3'>
-          <div className="flex flex-center gap-3 ">
-          <p
-            className='font-inter text-sm  cursor-pointer'
-            
-          >
-            <Image src={"/assets/icons/heart.png"} width={25} height={25}></Image>
-          </p><p
-            className='font-inter text-sm  cursor-pointer'
-           
-          >
-            <Image src={"/assets/icons/comment.svg"} width={25} height={25}></Image>
-          </p><p
-            className='font-inter text-sm cursor-pointer'
-          >
-            <Image src={"/assets/icons/share.svg"} width={20} height={20}></Image>
-          </p>
-          </div>
-          <div className="flex flex-center">
-            
-          </div>
-        </div>
-
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
-        <div className='mt-5 flex-between gap-4 border-t border-gray-500 pt-3'>
-          <div className="flex flex-center gap-3 ">
-          <p
-            className='font-inter text-sm  cursor-pointer'
-            
-          >
-            <Image src={"/assets/icons/heart.png"} width={25} height={25}></Image>
-          </p><p
-            className='font-inter text-sm  cursor-pointer'
-           
-          >
-            <Image src={"/assets/icons/comment.svg"} width={20} height={20}></Image>
-          </p><p
-            className='font-inter text-sm cursor-pointer'
-          >
-            <Image src={"/assets/icons/share.svg"} width={20} height={20}></Image>
-          </p>
 
 
+      {
+        (session?.user.id === post.creator._id && pathName === "/profile") ? (
+          <div className='mt-5 flex-between gap-4 border-t border-gray-500 pt-3'>
+            <div className="flex flex-center gap-3 ">
+              <p
+                className='font-inter text-sm  cursor-pointer'
+
+              >
+                <Image src={"/assets/icons/heart.png"} width={25} height={25} className="invert_icons" ></Image>
+              </p><p
+                className='font-inter text-sm  cursor-pointer'
+
+              >
+                <Image src={"/assets/icons/comment.svg"} width={25} height={25} className="invert_icons"></Image>
+              </p><p
+                className='font-inter text-sm cursor-pointer'
+              >
+                <Image src={"/assets/icons/share.svg"} width={20} height={20} className="invert_icons"></Image>
+              </p>
+            </div>
+
+            <div className="flex flex-center">
+              <p
+                className='font-inter text-sm green_gradient cursor-pointer'
+                onClick={handleEdit}
+              >
+                <Image src={"/assets/icons/edit.svg"} width={20} height={20} className="invert_icons"></Image>
+              </p>
+              <p
+                className='font-inter text-sm orange_gradient cursor-pointer'
+                onClick={handleDelete}
+              >
+                <Image src={"/assets/icons/delete.svg"} width={20} height={20} className="invert_icons"></Image>
+              </p>
+            </div>
           </div>
-          <div className="flex flex-center">
-            <p
-            className='font-inter text-sm green_gradient cursor-pointer'
-            onClick={handleEdit}
-          >
-            <Image src={"/assets/icons/edit.svg"} width={20} height={20}></Image>
-          </p>
-            <p
-              className='font-inter text-sm orange_gradient cursor-pointer'
-              onClick={handleDelete}
-            >
-              <Image src={"/assets/icons/delete.svg"} width={20} height={20}></Image>
-            </p>
+        ) : (
+          <div className='mt-5 flex-between gap-4 border-t border-gray-500 pt-3'>
+            <div className="flex flex-center gap-3 ">
+              <p
+                className='font-inter text-sm  cursor-pointer'
+
+              >
+                <Image src={"/assets/icons/heart.png"} width={25} height={25} className="invert_icons"></Image>
+              </p><p
+                className='font-inter text-sm  cursor-pointer'
+
+              >
+                <Image src={"/assets/icons/comment.svg"} width={25} height={25} className="invert_icons"></Image>
+              </p><p
+                className='font-inter text-sm cursor-pointer'
+              >
+                <Image src={"/assets/icons/share.svg"} width={20} height={20} className="invert_icons"></Image>
+              </p>
+            </div>
+            <div className="flex flex-center">
+
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 };

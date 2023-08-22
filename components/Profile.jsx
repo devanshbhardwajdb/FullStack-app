@@ -7,10 +7,13 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
         <span className='blue_gradient'>{name} Profile</span>
       </h1>
       <p className='desc text-left'>{desc}</p>
-      <div className="flex-start mt-10 head_text-2 gap-10">
+      <div className="flex-start mt-10 head_text-2 gap-10 head_text-2">
         <h1>0 Followers</h1>
         <h1>0 Following</h1>
       </div>
+      <h1 className='head_text text-left py-10'>
+        <span className='blue_gradient py-10'>{name} Tweeks</span>
+      </h1>
 
       <div className='mt-10 prompt_layout'>
         {data.map((post) => (

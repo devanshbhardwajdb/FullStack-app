@@ -26,7 +26,7 @@ const Nav = () => {
 
 
     return (
-        <nav className="flex-between w-full mb-16 pt-3">
+        <nav className="flex-between w-full mb-16 pt-3 ">
             <Link href="/" className="flex gap-1 flex-center">
                 <Image src="/assets/icons/twikker-logo.svg" alt="Promptompia Logo" className="object-contain" width={40} height={40} />
                 <p className="logo_text">Twikker</p>
@@ -43,7 +43,7 @@ const Nav = () => {
                         <Link href="/create-prompt" className="black_btn">Create Post</Link>
 
 
-                        <button className="outline_btn" type="button" onClick={signOut}>Sign Out</button>
+                        <button className="black_btn" type="button" onClick={signOut}>Sign Out</button>
 
                         <Link href="/profile">
                             <Image src={session?.user.image}
