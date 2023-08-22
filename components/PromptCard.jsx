@@ -95,7 +95,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               </p>
             </div>
 
-            <div className="flex flex-center">
+            <div className="flex flex-center gap-5">
               <p
                 className='font-inter text-sm green_gradient cursor-pointer'
                 onClick={handleEdit}
